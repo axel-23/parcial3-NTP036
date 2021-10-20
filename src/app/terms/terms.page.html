@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']" color="youtube">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding" slot="start">Youtube</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="dark">
+    <h1>Términos del Servicio</h1>
+  </ion-text>
+  <div class="ion-padding box">
+    <div *ngFor="let i of terminos">
+      <h2>{{ i.question }}</h2>
+      <p class="ion-text-justify">{{ i.answer }}</p>
+    </div>
+  </div>
+</ion-content>

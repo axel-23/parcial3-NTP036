@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']" color="youtube">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding" slot="start">Compras y membresías</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p>Ofertas de YouTube</p>
+  <img src="https://gstatic.com/youtube/img/unlimited/ytu_mobile_music_offer_676x260.png" alt="YouTube Music">
+  <ion-text>
+    <h6>Membresía para estudiantes: El primer mes es gratis.Plan familiar: El primer mes es gratis.</h6>
+    <p>Para disfrutar de música sin anuncios, descargas y reproducción en segundo plano, a un precio con descuento, debes verificar tu estado de estudiante.</p>
+  </ion-text>
+  <ion-button class="ion-float-right" color="primary" [routerLink]="['/']" fill="clear">Más información</ion-button>
+</ion-content>

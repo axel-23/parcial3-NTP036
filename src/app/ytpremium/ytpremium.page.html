@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']" color="youtube">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding" slot="start">Obtener YouTube Premium</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <img src="https://www.gstatic.com/youtube/img/promos/growth/ytr_lp2_logo_premium_phone_portrait_300x80.png" alt="YouTube Premium">
+  <ion-text>
+    <h6>YouTube y YouTube Music sin anuncios, sin conexión y en segundo plano</h6>
+    <ion-button color="primary" [routerLink]="['/']" >Pruébalo gratis</ion-button>
+      <p>1 mes de prueba gratuita</p>
+      <p>Después, USD 7.19 por mes</p>
+      <p>Te enviaremos un recordatorio 7 días antes de que termine la prueba</p>
+      <p>Facturación recurrente • Cancela en cualquier momento</p>
+  </ion-text>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p class="ion-padding-start">O ahorra dinero con un <a [routerLink]="['/memberships']">plan familiar o de estudiante.</a></p>
+  </ion-toolbar>
+</ion-footer>

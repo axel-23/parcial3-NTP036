@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']" color="youtube">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding" slot="start">Apps conectadas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let app of apps">
+      <ion-avatar>
+        <img src="{{ app.img }}">
+      </ion-avatar>
+      <ion-label>
+        <p>{{ app.name }}</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear">No conectadas</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

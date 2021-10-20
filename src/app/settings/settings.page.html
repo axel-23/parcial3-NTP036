@@ -1,0 +1,302 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let a of account">
+    <ion-item [id]="a.id" (click)="iconWork(a.id+'' )">
+      <ion-label>
+        <h3>Cuenta</h3>
+        <p>Elige cómo aparecerás y qué verás en YouTube</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item [id]="a.id+'icon2'"  class="myHiddenTec"
+      (click)="revIconWork(a.id+'')">
+      <ion-label>
+        <h3>Cuenta</h3>
+        <p>Elige cómo aparecerás y qué verás en YouTube</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-up-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-list [id]="a.id+'content'" class="myHiddenTec">
+      <ion-item>
+        <ion-label>
+          <h4>Modo restringido</h4>
+          <p>Permite ocultar los videos que posiblemente sean para mayores de edad. Ningún filtro es completamente preciso. La configuración solo se aplica a este navegador.</p>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Idioma</h4>
+          <p>Español (Latinoamérica)</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Ubicación</h4>
+          <p>El Salvador</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Tema oscuro</h4>
+        </ion-label>
+        <ion-toggle slot="end"  [ngModel]="darkMode" (ionChange)="change()"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  
+  <ion-list *ngFor="let h of history">
+    <ion-item [id]="h.id" (click)="iconWork(h.id+'' )">
+      <ion-label>
+        <h3>Historial y privacidad</h3>
+        <p>Administra tus historiales de búsqueda y reproducciones y revisa la Política de <br>Privacidad de Google</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item [id]="h.id+'icon2'"  class="myHiddenTec"
+      (click)="revIconWork(h.id+'')">
+      <ion-label>
+        <h3>Historial y privacidad</h3>
+        <p>Administra tus historiales de búsqueda y reproducciones y revisa la Política de <br>Privacidad de Google</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-up-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-list [id]="h.id+'content'" class="myHiddenTec">
+      <ion-item>
+        <ion-label>
+          <h4>Borrar historial de reproducciones</h4>
+          <p>Borra el historial de reproducciones de esta cuenta en todos los dispositivos. Esto también incluye tus Historias.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>     
+          <h4>Borrar historial de búsqueda</h4>
+          <p>Borra las búsquedas que realizaste con esta cuenta de todos los dispositivos.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Pausar el historial de reproducciones</h4>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Pausar el historial de búsqueda</h4>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>     
+          <h4>Administrar la actividad</h4>
+          <p>Revisa y borra elementos de tu historial.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Mantener todas mis suscripciones privadas</h4>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Mantener en privado todas las listas de reproducción que guardé</h4>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>     
+          <h4>Anuncios basados en tu interés</h4>
+          <p>Administra  tu configuración de anuncios en los ajustes de Google Ads.</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  
+  <ion-list *ngFor="let n of notifications">
+    <ion-item [id]="n.id" (click)="iconWork(n.id+'' )">
+      <ion-label>
+        <h3>Notificaciones</h3>
+        <p>Selecciona las notificaciones por correo electrónico que quieres recibir</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item [id]="n.id+'icon2'"  class="myHiddenTec"
+      (click)="revIconWork(n.id+'')">
+      <ion-label>
+        <h3>Notificaciones</h3>
+        <p>Selecciona las notificaciones por correo electrónico que quieres recibir</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-up-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-list [id]="n.id+'content'" class="myHiddenTec">
+      <ion-item>
+        <ion-label>
+          <h4>Permitir correos electrónicos</h4>
+          <p>Deseo recibir correos electrónicos sobre mi actividad en YouTube y las actualizaciones que solicité</p>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Actualizaciones de productos</h4>
+          <p>Novedades, anuncios y videos</p>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Actualizaciones sobre tu canal</h4>
+          <p>Mi canal de YouTube: novedades, anuncios y sugerencias personalizadas</p>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>     
+          <h4>Obtén más información sobre los correos electrónicos de YouTube.</h4>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h4>Idioma del correo electrónico</h4>
+          <p>Español (Latinoamérica)</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item [routerLink]="['/ytapps']">
+      <ion-label>
+        <h3>Apps conectadas</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list *ngFor="let p of pays">
+    <ion-item [id]="p.id" (click)="iconWork(p.id+'' )">
+      <ion-label>
+        <h3>Facturación y pagos</h3>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item [id]="p.id+'icon2'"  class="myHiddenTec"
+      (click)="revIconWork(p.id+'')">
+      <ion-label>
+        <h3>Facturación y pagos</h3>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="start" name="chevron-up-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-list [id]="p.id+'content'" class="myHiddenTec">
+      <ion-item>
+        <ion-label>
+          <h4>Habilitar compras rápidas</h4>
+          <p>Realiza compras de YouTube en todos los dispositivos sin verificar tu cuenta.</p>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item [routerLink]="['/memberships']">
+      <ion-label>
+        <h3>Compras y membresías</h3>
+        <p>Administra tus compras y membresías de YouTube</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>YouTube, una empresa de Google</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+<!--   <ion-list>
+    <ion-item>
+      <ion-label>
+        <h3>Cuenta</h3>
+        <p>Elige cómo aparecerás y qué verás en YouTube</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Historial y privacidad</h3>
+        <p>Administra tus historiales de búsqueda y reproducciones y revisa la Política de <br>Privacidad de Google</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Notificaciones</h3>
+        <p>Selecciona las notificaciones por correo electrónico que quieres recibir</p>
+      </ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/ytapps']">
+      <ion-label>
+        <h3>Apps conectadas</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Facturación y pagos</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/memberships']">
+      <ion-label>
+        <h3>Compras y membresías</h3>
+        <p>Administra tus compras y membresías de YouTube</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>YouTube, una empresa de Google</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="moon"></ion-icon>
+      <ion-label>Tema oscuro</ion-label>
+      <ion-toggle class="toogle" slot="end"></ion-toggle>
+    </ion-item>
+  </ion-list> -->
+</ion-content>

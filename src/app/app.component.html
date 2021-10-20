@@ -1,3 +1,63 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main">
+    <ion-menu side="end" contentId="main" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="closeMenu()">
+              <ion-icon slot="start" name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title>Cuenta</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-fab vertical="top" horizontal="end" slot="fixed">
+          <ion-fab-button color="danger" (click)="closeFAB()" [routerLink]="['ytstudio']">
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <ion-list>
+          <ion-item>
+            <ion-icon class="ion-margin" name="person-circle-outline"></ion-icon>
+              Tu canal
+          </ion-item>
+          <ion-item [routerLink]="['ytpremium']" (click)="closeMenu()">
+            <ion-icon class="ion-margin" name="logo-youtube"></ion-icon>
+            Obtener YouTube Premium
+          </ion-item>
+          <ion-item  [routerLink]="['memberships']" (click)="closeMenu()">
+            <ion-icon class="ion-margin" name="cash-outline"></ion-icon>
+            Compras y membresías
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-margin" name="swap-horizontal-outline"></ion-icon>
+            Cambiar de cuenta
+          </ion-item>
+          <ion-item [routerLink]="['settings']" (click)="closeMenu()">
+            <ion-icon class="ion-margin" name="settings-outline"></ion-icon>
+            Configuración
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-margin" name="shield-checkmark-outline"></ion-icon>
+            Tus datos en YouTube
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-margin" name="chatbox-ellipses-outline"></ion-icon>
+            Comentarios
+          </ion-item>
+          <ion-item>
+            <ion-icon class="ion-margin" name="help-circle-outline"></ion-icon>
+            Ayuda
+          </ion-item>
+        </ion-list>
+      </ion-content>
+      <ion-footer class="ion-no-border">
+        <ion-toolbar class="ion-text-center">
+          Política de Privacidad • <a [routerLink]="['/terms']" (click)="closeMenu()">Condiciones del Servicio</a>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
